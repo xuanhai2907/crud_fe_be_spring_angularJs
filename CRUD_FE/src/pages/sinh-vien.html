@@ -1,0 +1,134 @@
+<div class="container">
+  <form name="formSinhVien">
+    <div class="row">
+      <div class="col-sm-4 offset-1">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Mã: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="maSV"
+            ng-model="maSV"
+            required
+          />
+          <div style="color: red" ng-show = "errorMessage">{{errorMessage}}</div>
+          <div style="color: red" ng-show="formSinhVien.maSV.$error.required">
+            {{errors.maSV}}
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Tên: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="tenSV"
+            ng-model="tenSV"
+            required
+          />
+          <div style="color: red" ng-show="formSinhVien.tenSV.$error.required">
+            {{errors.tenSV}}
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email: </label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            ng-model="email"
+            required
+          />
+          <div style="color: red" ng-show="formSinhVien.email.$error.required">
+            {{errors.email}}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 offset-1">
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label">Giới tính: </label>
+          <br />
+          <span>Nam</span>
+          <input
+            type="radio"
+            ng-model="gioiTinh"
+            name="gioiTinh"
+            value="true"
+            ng-checked="gioiTinh == true"
+          />
+          <span>Nữ</span>
+          <input
+            type="radio"
+            ng-model="gioiTinh"
+            name="gioiTinh"
+            value="false"
+            ng-checked="gioiTinh == false"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Tên chuyên ngành:
+          </label>
+          <select class="form-select" ng-model="tenChuyenNganh">
+            <option ng-repeat="cn in chuyenNganhs" value="{{cn.id}}">
+              {{cn.ten}}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Tên lớp: </label>
+          <select class="form-select" ng-model="tenLop">
+            <option ng-repeat="lp in lops" value="{{lp.id}}">
+              {{lp.tenLop}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div align="center">
+      <a
+        href="#sinh-vien/add"
+        type="submit"
+        class="btn btn-primary"
+        ng-click="themSinhVien($event)"
+        >Add</a
+      ><a
+        href=""
+        type="submit"
+        class="btn btn-primary m-lg-5"
+        ng-click="suaSinhVien($event, id)"
+        >Edit</a
+      >
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Mã</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Email</th>
+        <th scope="col">Giới tính</th>
+        <th scope="col">Tên chuyên ngành</th>
+        <th scope="col">Tên lớp</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in sinhViens">
+        <th scope="row">{{$index}}</th>
+        <td>{{item.maSV}}</td>
+        <td>{{item.tenSV}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.gioiTinh == true ? "Nam": "Nữ"}}</td>
+        <td>{{item.tenChuyenNganh}}</td>
+        <td>{{item.tenLop}}</td>
+        <td>
+          <a href="" ng-click="detailSinhVien($event, item.id)">Detail</a>
+          <a href="" ng-click="deleteSinhVien($event, item.id)"
+            >Delete</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

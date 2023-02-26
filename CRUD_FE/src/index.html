@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo crud</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sinh-vien">Sinh Viên</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lop">Lớp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main ng-view></main>
+
+    <footer><h4 align="center">Hangnt169</h4></footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="../src/config/api.js"></script>
+    <script src="./route.js"></script>
+  </body>
+</html>
