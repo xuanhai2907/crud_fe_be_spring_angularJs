@@ -1,7 +1,7 @@
 # crud_fe_be_spring_angularJs
 1. Bạn cần chạy backend( template ) lên, nhớ setup jdk17 nha, đổi tên tài khoản, mật khẩu kết nối database ở file application
 2. Bạn chạy file index ở bên frontend
-DB SQL Server:
+3. DB SQL Server:
 CREATE TABLE [dbo].[NhanVien](
 	[Id] [uniqueidentifier] NOT NULL,
 	[Ma] [varchar](20) NULL,
