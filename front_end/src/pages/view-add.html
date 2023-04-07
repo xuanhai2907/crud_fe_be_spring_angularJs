@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-4">
+      <div class="center">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Mã</label>
+            <input type="text" class="form-control" ng-model="ma" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Tên</label>
+            <input type="text" class="form-control" ng-model="ten" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Giới tính</label> <br />
+            <span>Nam: </span
+            ><input type="radio" value="Nam" ng-model="gioiTinh" />
+            <span>Nữ: </span
+            ><input type="radio" value="Nu" ng-model="gioiTinh" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Địa chỉ</label>
+            <select class="form-select" ng-model="diaChi">
+              <option value="Hai Duong">Hai Duong</option>
+              <option value="Nam Dinh">Nam Dinh</option>
+              <option value="Ha Noi">Ha Noi</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <a class="btn btn-success" ng-click="add($event)">Add</a>
+      <a href="#hien-thi" class="btn btn-warning">Back to home</a>
+    </div>
+  </div>
+</div>

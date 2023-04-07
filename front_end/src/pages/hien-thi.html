@@ -1,0 +1,55 @@
+<div class="container">
+  <a
+    type="button"
+    class="btn btn-success"
+    style="margin-top: 50px"
+    href="#nhan-vien/view-add"
+  >
+    Add
+  </a>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">ID</th>
+          <th scope="col">Mã nhân viên</th>
+          <th scope="col">Tên nhân viên</th>
+          <th scope="col">Giới tính</th>
+          <th scope="col">Địa chỉ</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="nv in listNhanVien">
+          <td>{{$index}}</td>
+          <td>{{nv.id}}</td>
+          <td>{{nv.ma}}</td>
+          <td>{{nv.ten}}</td>
+          <td>{{nv.gioiTinh}}</td>
+          <td>{{nv.diaChi}}</td>
+          <td>
+            <a
+              href="#nhan-vien/detail/{{nv.id}}"
+              type="button"
+              class="btn btn-primary"
+              >Update</a
+            >
+            <a
+              type="button"
+              class="btn btn-danger"
+              ng-click="delete($event, nv.id)"
+              >Remove</a
+            >
+            <a
+              href="#nhan-vien/detail/{{nv.id}}"
+              type="button"
+              class="btn btn-info"
+              >Detail</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
